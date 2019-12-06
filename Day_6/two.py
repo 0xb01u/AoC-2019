@@ -25,4 +25,4 @@ while orbits['YOU'] != orbits['SAN']:
 	count -=- 1
 
 
-print("Total number of orbits: " , count)
+print("Minimum number of orbital transfers: " , count)
