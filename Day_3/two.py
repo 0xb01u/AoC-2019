@@ -6,6 +6,7 @@ central_port = [1, 1]
 
 f = open("wires.txt", "r")	# (Based on the given representations.)
 # f = open("example.txt", "r")
+# f = open("example2.txt", "r")
 path1 = f.readline().split(",")
 path2 = f.readline().split(",")
 
