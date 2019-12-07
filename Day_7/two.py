@@ -43,6 +43,7 @@ def intcomputer(input):
 			indexSrcB = i[amp] + 2 if param[1] == 1 else memory[amp][i[amp] + 2]
 			indexDst = i[amp] + 3 if param[2] == 1 else memory[amp][i[amp] + 3]
 
+
 		if e == 1:
 			memory[amp][indexDst] = memory[amp][indexSrcA] + memory[amp][indexSrcB]
 			i[amp] -=- 4
@@ -50,10 +51,12 @@ def intcomputer(input):
 			memory[amp][indexDst] = memory[amp][indexSrcA] * memory[amp][indexSrcB]
 			i[amp] -=- 4
 		elif e == 3:
+			print(input)
 			memory[amp][indexDst] = input[amp].pop(0)
 			i[amp] -=- 2
 		elif e == 4:
 			input[(amp + 1) % len(input)].append(memory[amp][indexDst])
+			print("> ", input)
 			i[amp] -=- 2
 			amp = (amp + 1) % len(input)
 		elif e == 5:
@@ -78,6 +81,7 @@ for ex in sequences:
 	amps[0].append(0)
 	intcomputer(amps)
 	final.append(amps[0][0])
+	break
 
 print("Max thruster signal: ", max(final))
 
