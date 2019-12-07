@@ -11,16 +11,12 @@ inputD = []
 inputE = []
 
 final = []
-phases = [5, 6, 7, 8, 9]
-sequences = []
-# It's my first time using itertools :/
-for s in list(itertools.product(phases, repeat = 5)):
-	if 5 in s and 6 in s and 7 in s and 8 in s and 9 in s:
-		sequences.append(list(s))
+phases = range(5, 10)
+sequences = list(itertools.permutations(phases))
 
 def reset():
-	file = "software.txt"
-	return [list(map(int, open(file, "r").read().split(","))), list(map(int, open(file, "r").read().split(","))), list(map(int, open(file, "r").read().split(","))), list(map(int, open(file, "r").read().split(","))), list(map(int, open(file, "r").read().split(",")))]
+	file = list(map(int, open("software.txt", "r").read().split(",")))
+	return [file, file[:], file[:], file[:], file[:]]
 
 def intcomputer(input):
 	amp = 0
@@ -85,4 +81,4 @@ for ex in sequences:
 
 print("Max thruster signal: ", max(final))
 
-# This is the ugliest thing I've coded in my entire life and I'm very ashamed of it
+# This is slightly better than the first program I used to solve this puzzle, but still ugly.

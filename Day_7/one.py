@@ -7,12 +7,8 @@ import itertools
 inputs = []
 
 final = []
-phases = [0, 1, 2, 3, 4]
-sequences = []
-# It's my first time using itertools :/
-for s in list(itertools.product(phases, repeat = 5)):
-	if 0 in s and 1 in s and 2 in s and 3 in s and 4 in s:
-		sequences.append(list(s))
+phases = range(5)
+sequences = list(map(list, itertools.permutations(phases)))
 
 def reset():
 	return list(map(int, open("software.txt", "r").read().split(",")))
@@ -71,6 +67,6 @@ for ex in sequences:
 	ex.insert(1, 0)
 	for i in range(5):
 		intcomputer(ex)
-	final.append(ex)
+	final.append(ex[0])
 
 print("Max thruster signal: ", max(final))
