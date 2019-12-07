@@ -51,12 +51,10 @@ def intcomputer(input):
 			memory[amp][indexDst] = memory[amp][indexSrcA] * memory[amp][indexSrcB]
 			i[amp] -=- 4
 		elif e == 3:
-			print(input)
 			memory[amp][indexDst] = input[amp].pop(0)
 			i[amp] -=- 2
 		elif e == 4:
 			input[(amp + 1) % len(input)].append(memory[amp][indexDst])
-			print("> ", input)
 			i[amp] -=- 2
 			amp = (amp + 1) % len(input)
 		elif e == 5:
@@ -81,8 +79,7 @@ for ex in sequences:
 	amps[0].append(0)
 	intcomputer(amps)
 	final.append(amps[0][0])
-	break
-
+	
 print("Max thruster signal: ", max(final))
 
 # This is slightly better than the first program I used to solve this puzzle, but still ugly.
