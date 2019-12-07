@@ -19,7 +19,7 @@ class Intcomputer:
 		self.__indata__.extend(e)
 		if self.__ps__ == 'I':
 			self.__ps__ = self.__states__[0]
-			self.step()
+			self.run()
 
 	def output(self):
 		r = self.__outdata__[:]
