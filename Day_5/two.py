@@ -2,8 +2,6 @@
 # Advent of Code 2019 - Day 5
 
 # TEST
-import math, functools
-
 def reset():
 	return list(map(int, open("test.txt", "r").read().split(",")))
 
