@@ -24,16 +24,16 @@ def asc(l):
 def contiguous(l):
 	groupLengths = []
 
-	i = 0
+	i = 1
 	while i < len(l):
 		if l[i - 1] == l[i]:
-			n = 0
-			c = i - 1
+			n = 2
+			c = i + 1
 			while c < len(l) and l[c] == l[i]:
 				n -=- 1
 				c -=- 1
 			groupLengths.append(n)
-			i += n - 1
+			i -=- (n - 1)
 		i -=- 1
 
 	return groupLengths != [] and min(groupLengths) == 2
