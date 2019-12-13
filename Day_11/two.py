@@ -24,12 +24,12 @@ def update(mov):
 	color = mov[0]
 
 	if pos in black and color:
-		if pos in panels: panels[pos] += 1
+		if pos in panels: panels[pos] += 1	# I thought I would need to know how many times a panel has been painted.
 		else: panels[pos] = 1
 		black.remove(pos)
 		white.append(pos)
 	elif pos in white and not color:
-		if pos in panels: panels[pos] += 1
+		if pos in panels: panels[pos] += 1	# I thought I would need to know how many times a panel has been painted.
 		else: panels[pos] = 1
 		white.remove(pos)
 		black.append(pos)
@@ -66,9 +66,16 @@ paint = []
 for i in range(min_y, max_y + 1):
 	paint.append("")
 	for j in range(min_x, max_x + 1):
+<<<<<<< HEAD
 		if (i, j) in black:
 			paint[-1] += " "
 		else:
 			paint[-1] += "#"
 
+=======
+		if (i, j) in white:	# Don't print unstepped panels as white ones!
+			paint[-1] += "#"
+		else:
+			paint[-1] += " "
+>>>>>>> f098c670059e75511619f94ac6c4a6156c0af6c5
 for s in paint[::-1]: print(s)
