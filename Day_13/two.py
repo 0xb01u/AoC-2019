@@ -2,13 +2,14 @@
 # Advent of Code 2019 - Day 13
 
 # Care package
+from os import system
 import sys
 sys.path.append("../python_modules/custom")
 from intcomputer import Intcomputer
 
 arcade = Intcomputer(list(map(int, open("game_free.txt", "r").read().split(","))))
 
-sprites = { 0: ' ', 1: '|', 2: '█', 3: '_', 4: 'O'}
+sprites = { 0: ' ', 1: '#', 2: '█', 3: '_', 4: 'O'}
 
 empty = []
 wall = []
@@ -20,6 +21,7 @@ score = 0
 blocks = { 0: empty, 1: wall, 2: block, 3: paddle, 4: ball }
 
 next_cycle = False
+plays = 0
 while arcade.run() != 'F' or not next_cycle:
 	next_cycle = arcade.state() == 'F'
 
@@ -37,8 +39,7 @@ while arcade.run() != 'F' or not next_cycle:
 						blocks[k].remove((x, y))
 			blocks[b].append((x, y))
 
-	#print(ball)
-	#print(paddle)
+
 
 	# max_x = max([max(empty), max(wall), max(block), max(paddle), max(ball)])[0]
 	# max_y = max([max([e[::-1] for e in empty]), max([e[::-1] for e in wall]), max([e[::-1] for e in block]), max([e[::-1] for e in paddle]), max([e[::-1] for e in ball]), ])[0]
@@ -53,8 +54,16 @@ while arcade.run() != 'F' or not next_cycle:
 	# print()
 	# print("Score:", score)
 
+
+
+	#print(ball)
+	#print(paddle)
+
 	arcade.input([ball[0][0] - paddle[0][0]])
+	plays += 1
+	# system("clear")
 
 		
 
 print("Final score:", score)
+print("Number of plays:", plays)
