@@ -52,9 +52,8 @@ for _ in range(10**4):
 		if cur not in walls: walls.append(cur)
 	else:
 		steps += -1 if cur in visited else 1
-		if pos not in visited:visited.append(pos)
+		if pos not in visited: visited.append(pos)
 		pos = cur[:]
-		prev = d
 	if status == 2:
 		steps = 0
 		spreading = True
@@ -73,5 +72,7 @@ for _ in range(10**4):
 	# 		elif (i, j) in visited: s += "."
 	# 		else: s += " "
 	# 	print(s)
+
+
 
 print("Number of minutes it takes to fill the whole area with oxygen:", minutes)

@@ -2,9 +2,8 @@
 # Advent of Code 2019 - Day 15
 
 # Repair droid
-import random
-import sys
 from os import system
+import sys
 sys.path.append("../python_modules/custom")
 from intcomputer import Intcomputer
 
@@ -45,9 +44,8 @@ while True:
 		if cur not in walls: walls.append(cur)
 	else:
 		steps += -1 if cur in visited else 1
-		if pos not in visited:visited.append(pos)
+		if pos not in visited: visited.append(pos)
 		pos = cur[:]
-		prev = d
 	if status == 2: break
 
 	
