@@ -34,14 +34,11 @@ for _ in range(10**4):
 		if (pos[0] - 1, pos[1]) not in walls: D = 'S'
 
 	if D == 'N': d = 1
-	if D == 'S': d = 2
-	if D == 'W': d = 3
-	if D == 'E': d = 4
+	elif D == 'S': d = 2
+	elif D == 'W': d = 3
+	else: d = 4
 
-	if d == 1: cur = (pos[0] + 1, pos[1])
-	elif d == 2: cur = (pos[0] - 1, pos[1])
-	elif d == 3: cur = (pos[0], pos[1] - 1)
-	else: cur = (pos[0], pos[1] + 1)
+	cur = (pos[0] + (D == 'N') - (D == 'S'), pos[1] + (D == 'E') - (D == 'W'))
 
 	droid.input([d])
 	droid.run()
