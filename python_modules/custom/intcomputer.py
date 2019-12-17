@@ -13,7 +13,7 @@ class Intcomputer:
 
 	def __init__(self, program):
 		self.__mem = program[:]
-		self.__mem.extend([0] * len(program))
+		self.__mem.extend([0] * 10*len(program))
 		self.__indata = []
 		self.__outdata = []
 
