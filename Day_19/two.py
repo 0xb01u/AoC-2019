@@ -25,7 +25,7 @@ for i in range(1000000):			# Arbitrarily long numbers.
 				tractor.run()
 
 				if tractor.output()[0]:
-					print("Closest point in a 99x99 fitting square:", (i - 99, j), "Transformed:", (i - 99)*10000 + j)
+					print("Closest point in a 100x100 fitting square:", (i - 99, j), "Transformed:", (i - 99)*10000 + j)
 					exit()
 
 			break
